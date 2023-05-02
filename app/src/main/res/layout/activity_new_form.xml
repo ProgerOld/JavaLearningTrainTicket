@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    tools:context=".MainActivity">
+    tools:context=".NewFormActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:gravity="center"
-        android:text="Заполните поля ЖД билета"
+        android:text="Заполните поля ЖД билета НОВАЯ"
         android:textAllCaps="false"
         android:textColor="#448AFF"
         android:textSize="20sp"
@@ -65,12 +64,17 @@
         android:layout_height="70dp"
         android:layout_marginTop="16dp"
         android:background="#E1F5FE"
-        android:ems="10"
-        android:hint="Время оправления"
-        android:inputType="time"
-        android:paddingStart="14sp"
         android:textColor="#448AFF"
         android:textColorHint="#40C4FF"
+        android:ems="10"
+        android:hint="Дата и время оправления"
+        android:paddingStart="14sp"
+
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mestoField"
@@ -85,9 +89,14 @@
         android:textColor="#448AFF"
         android:textColorHint="#40C4FF"
         android:ems="10"
-        android:hint="Время прибытия"
-        android:inputType="time"
+        android:hint="Дата и время прибытия"
         android:paddingStart="14sp"
+
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateOutField"
@@ -123,15 +132,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/costField" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Перейти в новую версию"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

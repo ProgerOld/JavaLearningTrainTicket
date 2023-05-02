@@ -2,12 +2,12 @@ package com.example.javalearningtrainticket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText costField;
 
     private Button button;
+    private Button button2;
 
     private String user;
     private String mesto;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private String timeIn;
     private String cost;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
         userField = findViewById(R.id.userField);
         mestoField = findViewById(R.id.mestoField);
-        timeOutField = findViewById(R.id.timeOutField);
+        timeOutField = findViewById(R.id.dateOutField);
         timeInField = findViewById(R.id.timeInField);
         costField = findViewById(R.id.costField);
 
         button = findViewById(R.id.button); // Привязка к кнопке
         button.setOnClickListener(listener); //Обработка нажатия кнопки
 
+        button2 = findViewById(R.id.button2); // Привязка к кнопке
+        button2.setOnClickListener(listener2); //Обработка нажатия кнопки
     }
 
     private View.OnClickListener listener = new View.OnClickListener() {
@@ -59,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
             //Запаковка данных в контейнер намерения
             intent.putExtra(Ticket.class.getSimpleName(), ticket); //.class.getSimpleName() является ключом для запаковки в контейнер
 
+            startActivity(intent);
+
+        }
+    };
+
+    private View.OnClickListener listener2 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //Считывание данных с экрана
+            Intent intent = new Intent(getApplicationContext(), NewFormActivity.class);
             startActivity(intent);
 
         }
